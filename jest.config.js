@@ -3,7 +3,7 @@ module.exports = {
   moduleNameMapper: {
     '\\.css$': require.resolve('./test/style-mock.js'), // If you are importing the React component which in turn imports css files internally, jest throws Sytax error. For that, we need resolve to mock module.
   },
-  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'], // Imports the supplied files in all the test suites
+  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect', './test/setupTests.js'], // Imports the supplied files in all the test suites
   collectCoverageFrom: ['**/src/**/*.js'], // To cover all the files inside the src folder while generating the test report
   coverageThreshold: {
     //Setting the threshold levels for the different test results to meet.
